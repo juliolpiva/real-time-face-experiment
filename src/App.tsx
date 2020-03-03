@@ -7,13 +7,8 @@ const App = () => {
  const videoRef = useRef<HTMLVideoElement>(null);
   
   useEffect(() => {
-    const startChanfles = async () => {
-      await loadModels();
-      startCamera(videoRef);
-    }
-
     if (videoRef && videoRef.current) {
-      startChanfles();
+      initialize(videoRef);
     }
   });
 
@@ -25,6 +20,11 @@ const App = () => {
       </div>
 		</div>
 	);
+}
+
+const initialize = async (videoRef:React.RefObject<HTMLVideoElement>) => {
+  await loadModels();
+  startCamera(videoRef);
 }
 
 const loadModels = async () => {
