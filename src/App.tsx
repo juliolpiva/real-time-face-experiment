@@ -5,26 +5,27 @@ import './App.css';
 
 const App = () => {
  const videoRef = useRef<HTMLVideoElement>(null);
+ const containerRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
     if (videoRef && videoRef.current) {
-      initialize(videoRef);
+      initialize(videoRef, containerRef);
     }
   });
 
 	return (
-		<div>
-      <div className="Container">
-			  <div> This is your Webcam ! </div>
-        <video ref={videoRef} id="video" width="720" height="560" autoPlay muted />
+    <main className="main">
+      <h1> This is your Webcam ! </h1>
+      <div ref={containerRef} className="container">
+        <video ref={videoRef} id="video" className="video" width="740" height="560" autoPlay muted />
       </div>
-		</div>
+    </main>
 	);
 }
 
-const initialize = async (videoRef:React.RefObject<HTMLVideoElement>) => {
+const initialize = async (videoRef:React.RefObject<HTMLVideoElement>, containerRef:React.RefObject<HTMLDivElement>) => {
   await loadModels();
-  startCamera(videoRef);
+  startCamera(videoRef, containerRef);
 }
 
 const loadModels = async () => {
@@ -36,12 +37,13 @@ const loadModels = async () => {
   await faceapi.nets.faceExpressionNet.loadFromUri(MODEL_URL);
 }
 
-const startCamera = (videoRef:React.RefObject<HTMLVideoElement>) => {
+const startCamera = (videoRef:React.RefObject<HTMLVideoElement>, containerRef:React.RefObject<HTMLDivElement>) => {
   if(!videoRef || !videoRef.current) {
     return;
   }
 
   const video = videoRef.current;
+  const container = containerRef.current;
 
   navigator.getUserMedia(
     { video: {} },
@@ -53,8 +55,10 @@ const startCamera = (videoRef:React.RefObject<HTMLVideoElement>) => {
 
   video.addEventListener('play', () => {
     const canvas = faceapi.createCanvasFromMedia(video)
+    
+    canvas.classList.add('canvas')
+    container?.append(canvas)
 
-    document.body.append(canvas)
     const displaySize = { width: video.width, height: video.height }
     faceapi.matchDimensions(canvas, displaySize)
 
