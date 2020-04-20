@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import * as faceapi from 'face-api.js';
 
 import './App.css';
@@ -7,6 +7,8 @@ const App = () => {
  const videoRef = useRef<HTMLVideoElement>(null);
  const containerRef = useRef<HTMLDivElement>(null);
   
+ const [showCanvas, setShowCanvas] = useState(false);
+ 
   useEffect(() => {
     if (videoRef && videoRef.current) {
       initialize(videoRef, containerRef);
@@ -16,8 +18,10 @@ const App = () => {
 	return (
     <main className="main">
       <h1> This is your Webcam ! </h1>
-      <div ref={containerRef} className="container">
+      <button onClick={() => setShowCanvas(!showCanvas)}> Show Mask </button>
+      <div className="container">
         <video ref={videoRef} id="video" className="video" width="740" height="560" autoPlay muted />
+        <div ref={containerRef} className="canvas" style={{ display: `${showCanvas ? 'inherit' : 'none'}` }}/>
       </div>
     </main>
 	);
@@ -73,7 +77,7 @@ const startCamera = (videoRef:React.RefObject<HTMLVideoElement>, containerRef:Re
         faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
         faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
       }
-    }, 100)
+    }, 1)
   })
 }
 

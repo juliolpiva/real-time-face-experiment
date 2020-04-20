@@ -17,4 +17,7 @@
 
 .canvas {
   position: absolute;
+  margin-top: 2px;
+  width: 740px;
+  height: 560px;
 }
