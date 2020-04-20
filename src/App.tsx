@@ -86,6 +86,16 @@ const startCamera = (videoRef:React.RefObject<HTMLVideoElement>, containerRef:Re
       const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
       const resizedDetections = faceapi.resizeResults(detections, displaySize)
 
+      let value = null;
+    
+      if (detections?.length > 0) {
+        value = Object.entries(detections?.[0]?.expressions)?.find(item => item?.[1] >= 0.95)?.[0];
+      }
+      
+      if (value) {
+          console.log(value);
+      }
+
       if (canvas) {
         canvas.getContext('2d')!.clearRect(0, 0, canvas.width, canvas.height)
   
