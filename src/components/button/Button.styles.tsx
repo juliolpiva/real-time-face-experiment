@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 import {
+    primary,
+    secondary,
     white,
     black,
     nearBlack,
@@ -15,13 +17,14 @@ export const NativeButton = styled.button`
     border: none;
     transition: all 0.3s;
     appearance: none;
-    color: ${white};
-    background-color: ${black};
+    background-color: ${primary};
+    color: ${secondary};
     border: 1px solid transparent;
     font-size: 14px;
     margin: 11px 4px;
     border-radius: 4px;
     letter-spacing: 0.5px;
+    font-family: cursive;
 
     :hover {
         background-color: ${nearBlack};

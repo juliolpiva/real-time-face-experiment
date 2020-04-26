@@ -1,11 +1,17 @@
 
 import styled from 'styled-components';
 
+import { background, primary } from '../../theme/colors';
+
 export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 5rem;
+    padding: 25px;
+    color: ${primary};
+    background-color: ${background};
+    font-family: cursive;
+    height: 100vh;
 `;
 
 export const Header = styled.header``;
@@ -15,7 +21,7 @@ export const Title = styled.h1``;
 export const Actions = styled.div`
     display: flex;
     justify-content: space-around;
-    margin: 1rem;
+    margin: 10px;
 `;
 
 export const Content = styled.body`

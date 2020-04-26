@@ -40,7 +40,7 @@ const Home = () => {
 	return (
         <Wrapper>
             <Header>
-                <Title> This is your Webcam ! </Title>
+                <Title> Hey! Smile! Be Happy! :) </Title>
                 <Actions>
                     <Button onClick={handleInit}> Start </Button>
                     <Button onClick={handleCanvas}> Show Mask </Button>
