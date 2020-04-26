@@ -1,45 +1,22 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import styled from 'styled-components';
 
 // Video
 import * as faceapi from 'face-api.js';
 import { loadModels } from '../../utils/video/models';
 
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 5rem;
-`;
+// Components
+import Button from '../../components/button';
+import {
+    Wrapper,
+    Header,
+    Title,
+    Actions,
+    Content,
+    Video,
+    CanvasWrapper,
+} from './Home.styles'
 
-const Header = styled.header``;
-
-const Title = styled.h1``;
-
-const Actions = styled.div`
-    display: flex;
-    justify-content: space-around;
-    margin: 1rem;
-`;
-
-const Content = styled.body`
-    position: relative;
-    display: flex;
-    justify-content: center;
-`;
-
-const Video = styled.video`
-    position: absolute;
-`;
-
-const CanvasWrapper = styled.div`
-    position: absolute;
-    margin-top: 2px;
-    width: 740px;
-    height: 560px;
-`;
-
-const Homepage = () => {
+const Home = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
@@ -53,11 +30,11 @@ const Homepage = () => {
     }, [init]);
 
     const handleInit = useCallback(
-        () => setInit(true)
+        (event: Object) => setInit(true)
     , []);
 
     const handleCanvas = useCallback(
-        () => setShowCanvas(!showCanvas)
+        (event: Object) => setShowCanvas(!showCanvas)
     , [showCanvas]);
 
 	return (
@@ -65,8 +42,8 @@ const Homepage = () => {
             <Header>
                 <Title> This is your Webcam ! </Title>
                 <Actions>
-                    <button onClick={handleInit}> Start </button>
-                    <button onClick={handleCanvas}> Show Mask </button>
+                    <Button onClick={handleInit}> Start </Button>
+                    <Button onClick={handleCanvas}> Show Mask </Button>
                 </Actions>
             </Header>
             <Content>
@@ -144,4 +121,4 @@ const startCamera = (videoRef:React.RefObject<HTMLVideoElement>, containerRef:Re
     video.addEventListener('play',playVideo)
 }
 
-export default Homepage;
+export default Home;
