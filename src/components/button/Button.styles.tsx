@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 import {
     primary,
+    primaryLight,
     secondary,
+    backgroundLight,
     white,
     black,
     nearBlack,
@@ -14,7 +16,6 @@ export const NativeButton = styled.button`
     min-width: 100px;
     min-height: 36px;
     text-align: center;
-    border: none;
     transition: all 0.3s;
     appearance: none;
     background-color: ${primary};
@@ -27,7 +28,8 @@ export const NativeButton = styled.button`
     font-family: cursive;
 
     :hover {
-        background-color: ${nearBlack};
+        border: 1px ${primary} solid;
+        background-color: ${primaryLight};
         cursor: pointer;
     }
 
@@ -36,8 +38,8 @@ export const NativeButton = styled.button`
     }
 
     :active {
-        color: ${white};
-        background-color: ${black};
+        background-color: ${primary};
+        color: ${secondary};
     }
 
     :disabled {
