@@ -16,13 +16,11 @@ import {
     CanvasWrapper,
 } from './Home.styles'
 
-const SHOW_INIT_BUTTOM = false;
-
 const Home = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const [init, setInit] = useState(!SHOW_INIT_BUTTOM);
+    const [init, setInit] = useState(false);
     const [showCanvas, setShowCanvas] = useState(false);
 
     useEffect(() => {
@@ -44,7 +42,7 @@ const Home = () => {
             <Header>
                 <Title> Hey! Smile! Be Happy! :) </Title>
                 <Actions>
-                    { SHOW_INIT_BUTTOM && <Button onClick={handleInit}> Start </Button> }
+                    <Button disabled={init} onClick={handleInit}> { init ? 'Wait a sec' : 'Start' } </Button>
                     <Button onClick={handleCanvas}> Show Mask </Button>
                 </Actions>
             </Header>

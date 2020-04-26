@@ -4,10 +4,6 @@ import {
     primary,
     primaryLight,
     secondary,
-    backgroundLight,
-    white,
-    black,
-    nearBlack,
     disabled
 } from '../../theme/colors';
 
