@@ -31,6 +31,7 @@ export const NativeButton = styled.button`
 
     :disabled {
         cursor: not-allowed;
+        border: none;
     }
 
     :active {
