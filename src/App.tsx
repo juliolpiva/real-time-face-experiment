@@ -5,9 +5,7 @@ import Homepage from './pages/home';
 
 const App = () => {
 	return (
-    <main>
       <Homepage />
-    </main>
 	);
 }
 
