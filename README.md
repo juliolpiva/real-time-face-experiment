@@ -1,3 +1,4 @@
-TODO:
+How to run?
 
-- Mudar a cor de fundo de acordo com a expressão
+- yarn install
+- yarn start
