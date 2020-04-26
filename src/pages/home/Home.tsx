@@ -43,7 +43,7 @@ const Home = () => {
                 <Title> Hey! Smile! Be Happy! :) </Title>
                 <Actions>
                     <Button disabled={init} onClick={handleInit}> { init ? 'Wait a sec' : 'Start' } </Button>
-                    <Button onClick={handleCanvas}> Show Mask </Button>
+                    <Button disabled={!init} onClick={handleCanvas}> Show Mask </Button>
                 </Actions>
             </Header>
             <Content>
