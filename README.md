@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/84013328-f069-400e-9447-1815e02c530c/deploy-status)](https://app.netlify.com/sites/smile-now/deploys)
+
 # What is this ?
 
 This is a little project using React + Typescript, using the face-api.js lib to detect some expressions of your face.
@@ -12,4 +14,5 @@ This is a little project using React + Typescript, using the face-api.js lib to 
 
 ### Demo: https://smile-now.netlify.app/
 
-[SurpriseDemo](https://raw.githubusercontent.com/juliolpiva/real-time-face-experiment/master/public/surprised.JPG)
+
+![SurpriseDemo](https://raw.githubusercontent.com/juliolpiva/real-time-face-experiment/master/public/surprised.JPG)
