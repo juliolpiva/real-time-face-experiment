@@ -11,7 +11,6 @@ export const Wrapper = styled.div`
     color: ${primary};
     background-color: ${background};
     font-family: cursive;
-    height: 100vh;
 `;
 
 export const Header = styled.header``;
