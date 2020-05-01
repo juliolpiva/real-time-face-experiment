@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import { background, primary } from '../../theme/colors';
 
 export const Wrapper = styled.div`
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 25px;
     color: ${primary};
     background-color: ${background};
     font-family: cursive;

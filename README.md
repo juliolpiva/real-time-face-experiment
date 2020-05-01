@@ -5,14 +5,20 @@
 This is a little project using React + Typescript, using the face-api.js lib to detect some expressions of your face.
 
 ### How to run?
+
 - yarn install
 - yarn start
 
 ### How to use?
+
 - Click in the init button, and wait a while
 - After you video loaded, you can click on "Show Mask" and have fun!
 
 ### Demo: https://smile-now.netlify.app/
 
-
 ![SurpriseDemo](https://raw.githubusercontent.com/juliolpiva/real-time-face-experiment/master/public/surprised.JPG)
+
+### Todo:
+- Fix bug with mobile width (because of fixed width on camera);
+- Create a component for Camera and put some loadings;
+- Put an Emoji in somewhere whem the user do some face expression;
