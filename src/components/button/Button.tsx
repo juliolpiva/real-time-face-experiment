@@ -3,7 +3,7 @@ import React from 'react';
 import { NativeButton } from './Button.styles';
 
 export type ButtonProps = {
-    children: string | string[] | Node
+    children: string[] | Node
     disabled?: boolean
     onClick(event: Object): void
 }
