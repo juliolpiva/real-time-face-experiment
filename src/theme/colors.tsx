@@ -22,3 +22,5 @@ export const errorRed = '#ff6b6b';
 export const alertOrange = '#fe5937';
 export const disabled = `${warmGrey}`;
 
+export const beer = '#674d17';
+export const heart = '#d9596c';

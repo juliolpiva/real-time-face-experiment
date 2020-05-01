@@ -6,6 +6,7 @@ import { loadModels } from '../../utils/video/models';
 
 // Components
 import Button from '../../components/button';
+import Footer from '../../components/footer';
 import {
     Wrapper,
     Header,
@@ -50,6 +51,7 @@ const Home = () => {
                 <Video ref={videoRef} id="video" className="video" width="740" height="560" autoPlay muted />
                 <CanvasWrapper ref={containerRef} className="canvas" style={{ display: `${showCanvas ? 'inherit' : 'none'}` }}/>
             </Content>
+            <Footer />
         </Wrapper>
 	);
 }
