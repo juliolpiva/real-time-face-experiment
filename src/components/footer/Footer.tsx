@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 // Styles
 import { beer, heart, black } from '../../theme/colors';
+import { mobileMedia } from '../../theme/custom-media';
 
 // Components
 import { FaGithub, FaBeer, FaHeart } from 'react-icons/fa';
@@ -15,6 +16,10 @@ const Wrapper = styled.footer`
     position: absolute;
     bottom: 0;
     margin: 1rem;
+
+    ${mobileMedia} {
+        font-size: 12px;
+    }
 `;
 
 const Footer = () => {
